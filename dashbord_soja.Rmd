@@ -6,6 +6,10 @@ output:
     orientation: rows
     vertical_layout: fill
     theme:  cerulean
+    social: [ "twitter", "facebook", "linkedin" ]
+    navbar:
+      - { title: "Sobre Mim", href: "https://example.com/about", align: right }
+      - { icon: fa-address-card, href: "https://example.com/about", align: right }
 runtime: shiny
 ---
 
@@ -21,7 +25,7 @@ soja_map <- estados_br |>
   dplyr::left_join(soja)
 ```
 
-*Ver por estados*
+*Ver por estados* {data-icon="fa-signal"}
 ================
 
 Inputs {.sidebar}
@@ -87,7 +91,7 @@ renderPlotly({
 Row {.tabset}
 -------------
 
-### **Produção**
+### **Produção** 
 ```{r}
 renderPlotly({
   g <- soja |>
@@ -140,13 +144,13 @@ renderTable({
 })
 ```
 
-*Ver MT vs RS*
+*Ver MT vs RS* {data-icon="fa-chart-line"}
 ======================
 
 Row {data-height=350}
 ---------------------
 
-### **Série histórica de produtividade por hectare**
+### **Série histórica de produtividade por hectare** 
 ```{r}
 g <- soja |>
     dplyr::filter(abbrev_state %in% c("RS", "MT")) |>
